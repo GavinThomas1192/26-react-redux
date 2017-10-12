@@ -38,30 +38,6 @@ class CategoryItem extends React.Component {
     return(
       <section>
         <div className='list'>
-          {// <div className="static-modal">
-          //   <Modal.Dialog>
-          //     <Modal.Header>
-          //       <Modal.Title>Modal title</Modal.Title>
-          //     </Modal.Header>
-          //
-          //     <Modal.Body>
-          //       One fine body...
-          //     </Modal.Body>
-          //
-          //     <Modal.Footer>
-          //       <Button>Close</Button>
-          //       <Button bsStyle="primary">Save changes</Button>
-          //     </Modal.Footer>
-          //
-          //   </Modal.Dialog>
-          // </div>
-          // <Grid>
-          //   <Row className="show-grid">
-          //     <Col xs={12} md={8}><code>&lt;{`<h2>{category.title}</h2>`} /&gt;</code></Col>
-          //     <Col xs={6} md={4}><code>&lt;{'Col xs={6} md={4}'} /&gt;</code></Col>
-          //   </Row>
-          // </Grid>
-          }
 
           <h2>{category.title}</h2>
           <h3>Budget: {category.budget}</h3>
