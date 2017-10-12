@@ -49,7 +49,6 @@ const mapStateToProps = state => {
   return {
     categories: state.categories,
     totalMonthly: 2000,
-    // totalRemaining: 2000 - this.state.totalSpent,
   };
 };
 

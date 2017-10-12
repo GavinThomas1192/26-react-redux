@@ -6,6 +6,7 @@ import ExpenseItem from '../expense-item';
 import { connect } from 'react-redux';
 import {categoryUpdate, categoryDelete} from '../../action/category-actions.js';
 import {expenseUpdate, expenseDelete, expenseCreate} from '../../action/expense-actions.js';
+import { Button, FormControl, Modal, Grid, Row, Col } from 'react-bootstrap';
 
 
 class CategoryItem extends React.Component {
@@ -19,9 +20,11 @@ class CategoryItem extends React.Component {
     this.toggleExpense = this.toggleExpense.bind(this);
   }
 
+
+
   toggleCategory() {
     this.setState({editCategory: !this.state.editCategory});
-    console.log('thi');
+
   }
 
   toggleExpense() {
@@ -35,10 +38,11 @@ class CategoryItem extends React.Component {
     return(
       <section>
         <div className='list'>
+
           <h2>{category.title}</h2>
           <h3>Budget: {category.budget}</h3>
           <button onClick={()=>this.props.categoryDelete(this.props.category)}>X</button>
-          <button onClick={this.toggleCategory}>edit category</button>
+          <Button bsStyle="primary" bsSize="large" onClick={this.toggleCategory}>Edit category</Button>
           {this.state.editCategory ?
             <CategoryForm
               buttonText='Update'
@@ -47,8 +51,10 @@ class CategoryItem extends React.Component {
             />
             :
             undefined
+
+
           }
-          <div className='expense-container'>
+          <div className='expense-container' responsive>
             <ExpenseForm
               categoryID={category.id}
               buttonText='Create'
@@ -57,7 +63,7 @@ class CategoryItem extends React.Component {
 
             <div className='expense-items'>
               {this.props.expenses.map(expense =>
-                <p>
+                <p responsive>
                   <ExpenseItem key={expense.id} expense={expense} category={this.props} />
                 </p>
               )}
